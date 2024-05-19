@@ -12,7 +12,7 @@ def hello():
 def hello():
     return 'login is working'
 
-
+# new funct
 @app.route('/login2')
 def hello():
     return 'login2 is working'
