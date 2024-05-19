@@ -12,6 +12,11 @@ def hello():
 def hello():
     return 'login is working'
 
+
+@app.route('/login2')
+def hello():
+    return 'login2 is working'
+
 @app.route('/register')
 def hello():
     return 'register is working'
