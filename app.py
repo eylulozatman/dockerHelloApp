@@ -17,6 +17,10 @@ def hello():
 def hello():
     return 'login2 is working'
 
+@app.route('/new-login')
+def hello():
+    return 'this is new login'
+
 @app.route('/register')
 def hello():
     return 'register is working'
