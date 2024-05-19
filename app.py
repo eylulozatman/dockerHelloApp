@@ -6,25 +6,21 @@ app = Flask(__name__)
 def hello():
     return 'Hello, World!'
 
-
-
 @app.route('/login')
-def hello():
+def login():
     return 'login is working'
 
-
 @app.route('/login2')
-def hello():
+def login2():
     return 'login2 is working'
 
 @app.route('/new-login')
-def hello():
+def new_login():
     return 'this is new login'
 
 @app.route('/register')
-def hello():
+def register():
     return 'register is working'
-
 
 
 if __name__ == '__main__':
