@@ -12,5 +12,10 @@ def hello():
 def hello():
     return 'login is working'
 
+@app.route('/register')
+def hello():
+    return 'register is working'
+
+
 if __name__ == '__main__':
     app.run(debug=True)
