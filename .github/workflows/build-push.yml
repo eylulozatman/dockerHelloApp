@@ -24,7 +24,7 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build . -t helloappcontainer.azurecr.io/finalproject2:latest
+          docker build . -t helloAppContainer.azurecr.io/finalproject:latest
 
       - name: Push Docker image to ACR
         run: |
@@ -34,7 +34,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'helloDockerEylul'  # Your Azure App Service name
-          images: 'helloappcontainer.azurecr.io/finalproject2:latest'
+          images: 'helloappcontainer.azurecr.io/finalproject:latest'
 
       - name: Azure CLI logout
         run: |
