@@ -28,7 +28,7 @@ jobs:
 
       - name: Push Docker image to ACR
         run: |
-          docker push helloappcontainer.azurecr.io/finalproject2:latest
+          docker push helloAppContainer.azurecr.io/finalproject:latest
 
       - name: Deploy from ACR to App Service
         uses: azure/webapps-deploy@v2
