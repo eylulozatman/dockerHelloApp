@@ -23,14 +23,14 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - run: |
-        docker build . -t helloappcontainer.azurecr.io/dockerhelloapp:${{ github.sha }}
-        docker push helloappcontainer.azurecr.io/dockerhelloapp:${{ github.sha }}
+        docker build . -t helloappcontainer.azurecr.io/dockerhelloapp:latest
+        docker push helloappcontainer.azurecr.io/dockerhelloapp:latest
 
     - name: 'Deploy from ACR to App Service'
       uses: azure/webapps-deploy@v2
       with:
         app-name: 'helloDockerEylul'  # Your Azure App Service name
-        images: 'helloAppContainer.azurecr.io/dockerhelloapp:${{ github.sha }}'
+        images: 'helloAppContainer.azurecr.io/dockerhelloapp:latest
         
 
     - run: |
