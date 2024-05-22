@@ -1,6 +1,8 @@
 name: Build Docker Image and Push to ACR
 
-on: [push]
+on:
+  push:
+  workflow_dispatch:  # Manuel başlatma için tetikleyici
 
 jobs:
   build-and-deploy:
@@ -31,7 +33,6 @@ jobs:
       with:
         app-name: 'helloAppContainer'  # Your Azure App Service name
         images: 'helloAppContainer.azurecr.io/dockerhelloapp:${{ github.sha }}'
-        
 
     - run: |
         az logout
