@@ -18,23 +18,23 @@ jobs:
       - name: Azure Container Registry login
         uses: azure/docker-login@v1
         with:
-          login-server: helloappcontainer.azurecr.io
+          login-server: helloconreg.azurecr.io
           username: ${{ secrets.REGISTRY_USERNAME }}
           password: ${{ secrets.REGISTRY_PASSWORD }}
 
       - name: Build Docker image
         run: |
-          docker build . -t helloAppContainer.azurecr.io/finalproject:latest
+          docker build . -t helloconreg.azurecr.io/finalproject:latest
 
       - name: Push Docker image to ACR
         run: |
-          docker push helloAppContainer.azurecr.io/finalproject:latest
+          docker push helloconreg.azurecr.io/finalproject:latest
 
       - name: Deploy from ACR to App Service
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'helloDockerEylul'  # Your Azure App Service name
-          images: 'helloappcontainer.azurecr.io/finalproject:latest'
+          images: 'helloconreg.azurecr.io/finalproject:latest'
 
       - name: Azure CLI logout
         run: |
