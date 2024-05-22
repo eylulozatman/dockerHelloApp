@@ -1,7 +1,7 @@
 name: Build Docker Image and Push to ACR
 
 on: [push]
-#aaaaaa
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -11,7 +11,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: 'Sign in to Azure'
-      uses: azure/login@v1.5.0  
+      uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
