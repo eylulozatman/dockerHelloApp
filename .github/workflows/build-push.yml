@@ -18,7 +18,7 @@ jobs:
     - name: 'Build & Push to ACR'
       uses: azure/docker-login@v1
       with:
-        login-server: helloAppContainer.azurecr.io
+        login-server: helloappcontainer.azurecr.io
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
