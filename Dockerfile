@@ -24,7 +24,7 @@ RUN echo 'root:Docker!' | chpasswd && \
     sed -i 's/#PasswordAuthentication yes/PasswordAuthentication yes/' /etc/ssh/sshd_config
 
 # Expose ports for the application and SSH
-EXPOSE 5000 2222
+EXPOSE 2222 5000
 
 # Command to run SSH and the application
 CMD ["/bin/sh", "-c", "/usr/sbin/sshd -D & python app.py"]
